@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página interativa de estudo de Física sobre Movimento Circular e Força Centrípeta, temática de Shadow the Hedgehog.">
+  <title>Physics & Shadow — Movimento Circular & Força Centrípeta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">
+      <span class="logo-accent">SHADOW</span>PHYSICS
+    </div>
+    <nav class="nav" aria-label="Navegação Principal">
+      <ul class="nav-list">
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#teoria">Conceitos</a></li>
+        <li><a href="#simulador">Calculadora</a></li>
+        <li><a href="#exercicios">Exercícios</a></li>
+        <li><a href="#calendario">Cronograma</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main id="main-content">
+
+    <!-- Seção Hero -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <span class="badge">Física Clássica</span>
+        <h1>Movimento Circular & <span class="highlight">Força Centrípeta</span></h1>
+        <p>Explore a mecânica do movimento em trajetória circular com exemplos inspirados na velocidade do <strong>Shadow the Hedgehog</strong>.</p>
+        <div class="hero-actions">
+          <a href="#teoria" class="btn btn-primary">Iniciar Estudo</a>
+          <a href="#simulador" class="btn btn-secondary">Simulador de Força</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <!-- Placeholder para imagem temática do Shadow -->
+        <div class="img-placeholder" aria-label="Animação ou Imagem do Shadow em pista circular">
+          <span>[ Imagem / GIF: Shadow correndo em pista circular ]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Teórica e Conceitual -->
+    <section id="teoria" class="content-section">
+      <h2>1. Conceitos Fundamentais</h2>
+      <p class="section-intro">O movimento circular ocorre quando um objeto se desloca seguindo uma trajetória em formato de circunferência.</p>
+
+      <div class="cards-grid">
+        <article class="card">
+          <h3>Movimento Circular & Trajetória</h3>
+          <p>Mesmo com rapidez constante, a velocidade muda pois a sua <strong>direção</strong> se altera continuamente.</p>
+          <div class="example-box">
+            <strong>Exemplo:</strong> Shadow mantendo rapidez ao redor de uma arena circular precisa mudar constantemente a direção do seu vetor movimento.
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Raio (\(r\)) e Velocidade Tangencial (\(v\))</h3>
+          <p>O <strong>Raio (\(r\))</strong> é a distância entre o centro e o objeto (medido em metros).</p>
+          <p>A <strong>Velocidade Tangencial (\(v\))</strong> aponta instantaneamente na direção do movimento e é perpendicular ao raio.</p>
+        </article>
+
+        <article class="card">
+          <h3>Aceleração Centrípeta (\(a_c\))</h3>
+          <p>Responsável por alterar a direção da velocidade, apontando sempre para o centro.</p>
+          <div class="formula-box">
+            \( a_c = \frac{v^2}{r} \)
+          </div>
+          <p class="small">Nota: Dobrar a velocidade quadruplica a aceleração centrípeta (\(a_c \propto v^2\)).</p>
+        </article>
+
+        <article class="card highlight-card">
+          <h3>Força Centrípeta (\(F_c\))</h3>
+          <p>A força resultante necessária para manter o corpo em trajetória circular.</p>
+          <div class="formula-box">
+            \( F_c = m \cdot a_c \implies F_c = \frac{m \cdot v^2}{r} \)
+          </div>
+          <p class="small">Onde: \(F_c\) (N), \(m\) (kg), \(v\) (m/s), \(r\) (m).</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Seção de Simulador e Exemplos Práticos -->
+    <section id="simulador" class="content-section bg-alt">
+      <h2>2. Calculadora Interativa de Força Centrípeta</h2>
+      <p>Ajuste os parâmetros abaixo para calcular a força centrípeta exercida sobre o Shadow (ou outro objeto):</p>
+
+      <div class="calculator-container">
+        <form id="calc-form" class="calc-form">
+          <div class="form-group">
+            <label for="massa">Massa \(m\) (kg):</label>
+            <input type="number" id="massa" value="100" step="0.1" min="0.1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="velocidade">Velocidade \(v\) (m/s):</label>
+            <input type="number" id="velocidade" value="10" step="0.1" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="raio">Raio \(r\) (m):</label>
+            <input type="number" id="raio" value="50" step="0.1" min="0.1" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Calcular \(F_c\)</button>
+        </form>
+
+        <div class="calc-result" id="calc-result" aria-live="polite">
+          <h3>Resultado</h3>
+          <p id="result-text">Força Centrípeta (\(F_c\)): <strong>200.00 N</strong></p>
+          <p id="result-speed-kmh" class="sub-result">Velocidade em km/h: 36.00 km/h</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Exercícios Resolvidos -->
+    <section id="exercicios" class="content-section">
+      <h2>3. Exercícios do Caderno</h2>
+      <div class="accordion">
+
+        <details class="accordion-item">
+          <summary><strong>Exemplo 1:</strong> Carro em curva (m = 100 kg, r = 50 m, v = 10 m/s)</summary>
+          <div class="accordion-content">
+            <p><strong>Conversão de velocidade:</strong> \(10 \text{ m/s} \times 3{,}6 = 36 \text{ km/h}\)</p>
+            <p><strong>Cálculo da força:</strong></p>
+            <p>\[ F_c = \frac{m \cdot v^2}{r} = \frac{100 \cdot (10)^2}{50} = \frac{100 \cdot 100}{50} = 200 \text{ N} \]</p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary><strong>Exemplo 2:</strong> Pedra presa a uma corda (m = 0,5 kg, r = 2 m, v = 6 m/s)</summary>
+          <div class="accordion-content">
+            <p>\[ F_c = \frac{0{,}5 \cdot (6)^2}{2} = \frac{0{,}5 \cdot 36}{2} = 9 \text{ N} \]</p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary><strong>Exemplo 3:</strong> Descobrir a massa (Fc = 4000 N, v = 20 m/s, r = 80 m)</summary>
+          <div class="accordion-content">
+            <p>\[ 4000 = \frac{m \cdot (20)^2}{80} \implies 4000 = \frac{400 \cdot m}{80} \implies 4000 = 5m \implies m = 800 \text{ kg} \]</p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary><strong>Exemplo 4:</strong> Globo da Morte (Fc = 2400 N, r = 4 m, m = 150 kg)</summary>
+          <div class="accordion-content">
+            <p>\[ 2400 = \frac{150 \cdot v^2}{4} \implies 9600 = 150v^2 \implies v^2 = 64 \implies v = 8 \text{ m/s} \]</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Visualizador: Calendário Interativo -->
+    <section id="calendario" class="content-section bg-alt">
+      <h2>4. Cronograma e Prazos do Projeto</h2>
+      <p>Acompanhe as entregas e metas até a data limite (<strong>15/10</strong>).</p>
+
+      <div class="calendar-wrapper">
+        <div class="calendar-header">
+          <button id="prev-month" class="btn-cal" aria-label="Mês Anterior">&lt;</button>
+          <h3 id="month-year-display">Outubro 2026</h3>
+          <button id="next-month" class="btn-cal" aria-label="Próximo Mês">&gt;</button>
+        </div>
+
+        <div class="calendar-grid">
+          <div class="day-name">Dom</div>
+          <div class="day-name">Seg</div>
+          <div class="day-name">Ter</div>
+          <div class="day-name">Qua</div>
+          <div class="day-name">Qui</div>
+          <div class="day-name">Sex</div>
+          <div class="day-name">Sáb</div>
+        </div>
+        <div id="calendar-days" class="calendar-days"></div>
+      </div>
+      <div class="deadline-alert">
+        🚀 <strong>Prazo Final:</strong> 15/10 — Publicação no GitHub Pages / Netlify / Vercel.
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>Shadow Physics Web Project</h3>
+        <p>Projeto escolar/acadêmico sobre Movimento Circular e Força Centrípeta.</p>
+      </div>
+      <div class="footer-meta">
+        <p>Data Limite: <strong>15/10</strong></p>
+        <p>Entrega via Google Classroom</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 — Desenvolvido com HTML5, CSS3 e JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
