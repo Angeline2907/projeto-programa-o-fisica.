@@ -288,3 +288,86 @@ p {
   font-size: 0.8rem;
   color: var(--color-text-muted);
 }
+/* ==========================================================================
+   ESTILOS DO CALENDÁRIO / CRONOGRAMA
+   ========================================================================== */
+
+.calendar-wrapper {
+  background-color: var(--color-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.btn-cal {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.day-name {
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  padding: 5px 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+}
+
+.calendar-days div, .calendar-day {
+  background-color: var(--color-bg);
+  padding: 8px 0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  border: 1px solid var(--border-color);
+}
+
+/* Destaque para o dia limite ou atual */
+.calendar-days .deadline, .calendar-days .active {
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.6);
+}
+
+.deadline-alert {
+  background-color: rgba(229, 9, 20, 0.15);
+  border-left: 4px solid var(--color-primary);
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
