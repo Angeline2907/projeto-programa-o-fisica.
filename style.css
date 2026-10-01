@@ -411,3 +411,34 @@ h2 {
     font-size: 2.2rem;
   }
 }
+/* Ajuste de tamanho e proporção das imagens */
+.hero-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.banner-img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.side-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
