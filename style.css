@@ -1,7 +1,8 @@
 /* ==========================================================================
-   SHADOW PHYSICS - ESTILOS COMPLETOS (RESPONSIVO PARA TELEMÓVEL)
+   SHADOW PHYSICS - STYLE.CSS COMPLETO (TEMA ESCURO & RESPONSIVO PARA CELULAR)
    ========================================================================== */
 
+/* --- VARIÁVEIS DE CORES E TEMA --- */
 :root {
   --color-bg: #0e0e11;
   --color-bg-alt: #16161c;
@@ -14,10 +15,15 @@
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* --- RESET BÁSICO --- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,15 +34,16 @@ body {
   padding-bottom: 2rem;
 }
 
-/* --- Cabeçalho --- */
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
 .header {
   background-color: var(--color-bg-alt);
   border-bottom: 2px solid var(--color-primary);
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -63,21 +70,22 @@ body {
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .nav-list a:hover {
   color: var(--color-primary);
 }
 
-/* --- Conteúdo Geral --- */
+/* --- ESTRUTURA DE CONTEÚDO --- */
 main {
-  padding: 1rem;
+  padding: 1rem 0.8rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .content-section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   padding: 1.2rem;
   background-color: var(--color-bg-alt);
   border-radius: 12px;
@@ -89,13 +97,13 @@ main {
 }
 
 h1 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   margin-bottom: 0.8rem;
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: var(--color-primary);
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
@@ -103,12 +111,13 @@ h2 {
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin-bottom: 0.5rem;
+  color: var(--color-text);
 }
 
 p {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--color-text-muted);
   margin-bottom: 1rem;
 }
@@ -138,7 +147,7 @@ p {
 
 .btn {
   display: inline-block;
-  padding: 0.6rem 1rem;
+  padding: 0.65rem 1rem;
   font-size: 0.85rem;
   font-weight: bold;
   text-decoration: none;
@@ -161,7 +170,7 @@ p {
 }
 
 /* ==========================================================================
-   AJUSTE RIGOROSO DAS IMAGENS (CONTROLO DE TAMANHO)
+   IMAGENS DO SHADOW (AJUSTE DE TAMANHO PROPORCIONAL)
    ========================================================================== */
 
 .hero-media, .section-banner, .calc-side-img {
@@ -172,35 +181,35 @@ p {
   margin: 1.2rem 0;
 }
 
-/* 1. Imagem do topo (pista circular) */
+/* 1. Imagem Hero (Pista Circular) */
 .hero-img {
   width: 100%;
-  max-width: 300px !important; /* Limita a largura no telemóvel */
+  max-width: 320px !important;
   height: auto;
   border-radius: 12px;
   border: 2px solid var(--color-primary);
   box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
 }
 
-/* 2. Imagem da teoria (Shadow a estudar) */
+/* 2. Banner de Teoria (Shadow Estudando) */
 .banner-img {
   width: 100%;
-  max-width: 260px !important;
+  max-width: 280px !important;
   height: auto;
   border-radius: 12px;
   border: 1px solid var(--border-color);
-  background-color: #ffffff; /* Fundo branco para destacar os traços da imagem */
+  background-color: #ffffff;
   padding: 5px;
 }
 
-/* 3. Imagem da calculadora (Shadow a apontar) */
+/* 3. Imagem Lateral da Calculadora (Shadow Posando) */
 .side-img {
   width: 100%;
-  max-width: 180px !important;
+  max-width: 200px !important;
   height: auto;
 }
 
-/* --- Cartões e Formulários --- */
+/* --- CARDS E CAIXAS DE FÓRMULAS --- */
 .cards-grid {
   display: flex;
   flex-direction: column;
@@ -214,14 +223,36 @@ p {
   border: 1px solid var(--border-color);
 }
 
+.highlight-card {
+  border-left: 3px solid var(--color-primary);
+}
+
+.example-box {
+  background-color: rgba(229, 9, 20, 0.1);
+  border-left: 3px solid var(--color-primary);
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  border-radius: 4px;
+}
+
 .formula-box {
   background-color: #101015;
   padding: 0.6rem;
   border-radius: 6px;
   text-align: center;
   font-family: monospace;
+  font-size: 1rem;
   color: #fff;
-  margin: 0.5rem 0;
+  margin: 0.6rem 0;
+  border: 1px dashed var(--border-color);
+}
+
+/* --- CALCULADORA INTERATIVA --- */
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .calc-form {
@@ -231,7 +262,7 @@ p {
   background-color: var(--color-card);
   padding: 1rem;
   border-radius: 8px;
-  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -246,7 +277,7 @@ p {
 }
 
 .form-group input {
-  padding: 0.6rem;
+  padding: 0.65rem;
   background-color: var(--color-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
@@ -261,18 +292,29 @@ p {
   border-left: 4px solid var(--color-primary);
 }
 
-/* --- Acordeão e Calendário --- */
+.calc-result p {
+  margin-bottom: 0.3rem;
+}
+
+.sub-result {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* --- EXERCÍCIOS / ACORDEÃO --- */
 .accordion-item {
   background-color: var(--color-card);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   border-radius: 6px;
-  padding: 0.6rem;
+  padding: 0.7rem;
+  border: 1px solid var(--border-color);
 }
 
 .accordion-item summary {
   cursor: pointer;
   color: var(--color-text);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  outline: none;
 }
 
 .accordion-content {
@@ -282,14 +324,8 @@ p {
   font-size: 0.85rem;
 }
 
-.footer {
-  text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-}
 /* ==========================================================================
-   ESTILOS DO CALENDÁRIO / CRONOGRAMA
+   CALENDÁRIO / CRONOGRAMA (GRID DE 7 COLUNAS CORRIGIDO)
    ========================================================================== */
 
 .calendar-wrapper {
@@ -297,7 +333,7 @@ p {
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 1rem;
-  margin: 1.5rem 0;
+  margin: 1.2rem 0;
 }
 
 .calendar-header {
@@ -309,7 +345,7 @@ p {
 
 .calendar-header h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-text);
 }
 
@@ -319,30 +355,30 @@ p {
   border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 0.3rem 0.8rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   cursor: pointer;
 }
 
 .calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 4px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .day-name {
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-primary);
-  padding: 5px 0;
+  padding: 4px 0;
 }
 
 .calendar-days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 4px;
   text-align: center;
 }
 
@@ -350,12 +386,11 @@ p {
   background-color: var(--color-bg);
   padding: 8px 0;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--color-text-muted);
   border: 1px solid var(--border-color);
 }
 
-/* Destaque para o dia limite ou atual */
 .calendar-days .deadline, .calendar-days .active {
   background-color: var(--color-primary) !important;
   color: #ffffff !important;
@@ -370,4 +405,25 @@ p {
   border-radius: 6px;
   font-size: 0.85rem;
   margin-top: 1rem;
+}
+
+/* --- RODAPÉ --- */
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+}
+
+.footer-info h3 {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.75rem;
 }
